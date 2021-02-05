@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main() {
     cout << "The First 10 Even Numbers are: ";
     for (int i = 1; i <= 10; i++) {
