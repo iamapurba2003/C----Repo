@@ -19,6 +19,6 @@ void sum1() {
     cout << "Enter the Second Number: ";
     cin >> b;
     sumOfTwoNumbers = a + b;
-    cout <<"Congratulations! " << a << " + " << b << " is " << sumOfTwoNumbers;
+    cout <<"Congratulations! " << a << " + " << b << " is " << sumOfTwoNumbers << endl;
     
 }
