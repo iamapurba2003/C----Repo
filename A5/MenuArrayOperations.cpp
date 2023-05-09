@@ -2,7 +2,16 @@
 using namespace std;
 
 
-void Display(int arr[][4], int M, int N) {
+void MatrixDataInsertion(int (*arr)[4], int M, int N) {
+    cout << "Enter the elements of Matrix(only Numbers)? ";
+    for(int i = 0; i < M; i++) {
+        for(int k = 0; k < N; k++) {
+            cin >> arr[i][k];
+        }
+    }
+}
+
+void Display(int (*arr)[4], int M, int N) {
     // Dsiplay elements of 4x4 Matrix
     cout << "[ " << endl;
     for(int i = 0; i < M; i++) {
@@ -17,7 +26,7 @@ void Display(int arr[][4], int M, int N) {
     cout << endl;
 }
 
-void MatrixSumAll(int arr[][4], int M, int N) {
+void MatrixSumAll(int (*arr)[4], int M, int N) {
     // All elements Sum in Matrix
     int sum = 0;
     for(int i = 0; i < M; i++) {
@@ -29,7 +38,7 @@ void MatrixSumAll(int arr[][4], int M, int N) {
     cout << endl;
 }
 
-void MatrixSumRow(int arr[][4], int M, int N) {
+void MatrixSumRow(int (*arr)[4], int M, int N) {
     cout << endl;
     int rowSum = 0;
     // Row-wise Sum of elements in Matrix
@@ -42,7 +51,7 @@ void MatrixSumRow(int arr[][4], int M, int N) {
     }
 }
 
-void MatrixSumColumn(int arr[][4], int M, int N) {
+void MatrixSumColumn(int (*arr)[4], int M, int N) {
     // Column-wise Sum of elements in Matrix
     int ColumnSum[4] = {0, 0, 0, 0};
     for(int i = 0; i < M; i++) {
@@ -57,7 +66,7 @@ void MatrixSumColumn(int arr[][4], int M, int N) {
     }
 }
 
-void Transpose(int arr[][4], int M, int N, int Show) {
+void Transpose(int (*arr)[4], int M, int N, int Show) {
     // 0,0  1,0  2,0  3,0
     // 0,1  1,1  2,1  3,1
     // 0,2  1,2  2,2  3,2
@@ -95,12 +104,7 @@ void Menu() {
 int main() {
 
     // Global Variable Declaration 
-    int array[4][4] = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {7, 6, 5, 4},
-        {5, 3, 2, 1}
-    };
+    int array[4][4];
     char choice;
 
     // Start of Menu Driven Program
@@ -111,7 +115,7 @@ int main() {
         cout << endl;
 
         if(choice == 'A') {
-            continue;
+            MatrixDataInsertion(array, 4, 4);
         } else if(choice == 'B') {
             Display(array, 4, 4);
         } else if(choice == 'C') {
