@@ -6,6 +6,8 @@ int main() {
     // Global Variable Declaration
     char Sentence[17] = "Duck Duck Goose!";
     char reverseSentence[17] = "";
+    int mid = strlen(Sentence) / 2;
+    int n_idx = strlen(Sentence) - 1;
 
     // Reversing the String with the help of loop
     cout << "The Reverse of the String (" << Sentence << ") is ";
@@ -26,6 +28,16 @@ int main() {
         cout << reverseSentence[i];
     }
     cout << endl;
+
+
+    // Reversing a String (Alternative Way) -- Most Efficient Way (Will work for both even & Odd length Strings)
+    for(int i = 0; i < mid; i++) {
+        int temp = Sentence[i];
+        Sentence[i] = Sentence[n_idx];
+        Sentence[n_idx] = temp;
+        n_idx--;
+    }    
+    cout << "The Reverse of the String is " << Sentence << endl;
 
     return 0;
 }
