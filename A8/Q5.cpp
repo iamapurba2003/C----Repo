@@ -12,7 +12,7 @@ class Book {
     }
 
     public: // Access Specifier
-        void Input(int _bookNumber, char *_bookTitle, float _price) {
+        void Input(int _bookNumber, char _bookTitle[], float _price) {
             BookNumber = _bookNumber, Price = _price;
             strcpy(BookTitle, _bookTitle);
         }
@@ -31,10 +31,12 @@ int main() {
 
     Book B1;
     //? Error: conversion from string literal to 'char *' is depricated
-    B1.Input(5624, "New Era", 1432);
+    char name[] = "New Era";
+    B1.Input(5624, name, 1432);
     B1.Purchase(2);
 
     Book B2;
-    B2.Input(3421, "Mein Kamph", 678);
+    char BookTitle[] = "Mein Kamph";
+    B2.Input(3421, BookTitle, 678);
     B2.Purchase(12);
 }
