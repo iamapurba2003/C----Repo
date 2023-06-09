@@ -5,12 +5,18 @@ class VendingMachine {
 
     // Declearing data members
     int totalPrice;
-    string Products[4] = {"Candie", "Chip", "Gum", "Cookie"};
-    int cost[4] = {120, 70, 78, 230};
+    string *Products;
+    int *cost;
     int selection;
-    int Quantity = 1;
+    int Quantity;
 
     public: // Access Specifier
+        VendingMachine(string *Products, int *cost) {
+            this->Products = Products;
+            this->cost = cost;
+            this->Quantity = 1;
+        }
+
         void ShowProducts() {
             cout << "All Products..." << "\n\n";
             for(int i = 0; i < 4; i++) {
@@ -57,10 +63,12 @@ void Menu() {
 int main() {
 
     // Declearing Variables
-    int choice;
+    int choice = 1;
+    string Products[4] = {"Candie", "Chip", "Gum", "Cookie"};
+    int cost[4] = {120, 70, 78, 230};
 
     // Creating Objects
-    VendingMachine user1;
+    VendingMachine user1(Products, cost);
 
     cout << "Welcome to Vending Machine Program! " << "\n\n"; 
     while (choice != 0)
